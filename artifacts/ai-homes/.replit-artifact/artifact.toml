@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "AI HOMES"
+description = "A responsive property sales website for AI HOMES Luxury Villas in Kundana Habli near Devanahalli, Bengaluru, showcasing the project and helping prospective buyers request a site visit."
+version = "1.0.0"
+id = "artifacts/ai-homes"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25506
+
+[services.development]
+run = "pnpm --filter @workspace/ai-homes run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/ai-homes", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/ai-homes/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25506"
+BASE_PATH = "/"
