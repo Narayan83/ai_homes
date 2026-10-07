@@ -12,7 +12,8 @@
     "dev": "npm run dev -w @workspace/ai-homes",
     "build": "npm run typecheck && npm run build --workspaces --if-present",
     "typecheck:libs": "tsc --build",
-    "typecheck": "npm run typecheck:libs && npm run typecheck --workspaces --if-present"
+    "typecheck": "npm run typecheck:libs && npm run typecheck --workspaces --if-present",
+    "deploy:ai-homes": "wrangler deploy --config artifacts/ai-homes/wrangler.jsonc"
   },
   "allowScripts": {
     "esbuild": true
@@ -22,7 +23,8 @@
   },
   "devDependencies": {
     "prettier": "^3.9.6",
-    "typescript": "~5.9.3"
+    "typescript": "~5.9.3",
+    "wrangler": "^4.148.0"
   },
   "overrides": {
     "@esbuild-kit/esm-loader": "npm:tsx@^4.21.0",
