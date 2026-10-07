@@ -14,6 +14,9 @@
     "typecheck:libs": "tsc --build",
     "typecheck": "npm run typecheck:libs && npm run typecheck --workspaces --if-present"
   },
+  "allowScripts": {
+    "esbuild": true
+  },
   "dependencies": {
     "@replit/connectors-sdk": "^0.4.3"
   },
